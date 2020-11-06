@@ -1,7 +1,6 @@
 import random # imports random
 from random import randint #imports randint
-import time # imports time
-
+import time # imports ti
 randomList = ["Rock", "Paper", "Scissors"]
 
 playerScore = 0 # if playerScore goes up to 3 then player wins
@@ -150,7 +149,7 @@ else:
     exit()
 
 # time to show the results
-+++.    print("=============================================")
+print("=============================================")
 time.sleep(2)
 if playerScore > comScore:
     print("Player has won the game!")

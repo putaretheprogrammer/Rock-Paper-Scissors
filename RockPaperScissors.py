@@ -33,35 +33,33 @@ def CallRound():
             playerScore = playerScore + 1
             rounds = rounds + 1
         else:
-            print("Tie! Both won round 1!")
+            print("Tie! Both won round "  + str(rounds))
             playerScore = playerScore + 1
             comScore = comScore + 1
             rounds = rounds + 1
     elif playerChoice == "Paper":
          if comChoice == "Scissors":
-             print("Computer Wins Round 1")
+             print("Computer Wins Round " + str(rounds))
              comScore = comScore + 1
              rounds = rounds + 1
          elif comChoice == "Rock":
-             print("Player Wins Round 1")
+             print("Player Wins Round " + str(rounds))
              playerScore = playerScore + 1
              rounds = rounds + 1
          else:
-             print("Tie! Both won round 1!")
-             playerScore = playerScore + 1
-             comScore = comScore + 1
+             print("Tie! Both won round " + str(rounds))
              rounds = rounds + 1
     elif playerChoice == "Scissors":
         if comChoice == "Rock":
-             print("Computer Wins Round 1")
+             print("Computer Wins Round " + str(rounds))
              comScore = comScore + 1
              rounds = rounds + 1
         elif comChoice == "Paper":
-            print("Player Wins Round 1")
+            print("Player Wins Round " + str(rounds))
             playerScore = playerScore + 1
             rounds = rounds + 1
         else:
-            print("Tie! Both won round 1! ")
+            print("Tie! Both won round " + str(rounds))
             playerScore = playerScore + 1
             comScore = comScore + 1
             rounds = rounds + 1
@@ -75,12 +73,16 @@ roundCount = int(input())
 
 for i in range(roundCount):
     CallRound()
-    while playerScore == 3 or (playerScore > comScore and rounds == 3):
-        print("Player wins!")
-        input()
-        exit()
-    while comScore == 3 or comScore == 3 and rounds == 3:
-        print("Computer wins!")
-        input()
-        exit()
-    
+print("--------------------------------------------------")
+while rounds == roundCount + 1 and playerScore > comScore:
+    print("Player wins the game!")
+    input()
+    exit()
+while rounds == roundCount + 1 and playerScore < comScore:
+    print("Computer wins the game!")
+    input()
+    exit()
+while rounds == roundCount + 1 and playerScore == comScore:
+    print("Both won the game!")
+    input()
+    exit()
